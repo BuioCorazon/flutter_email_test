@@ -90,12 +90,13 @@ class GradientContainer extends StatelessWidget {
         ),
         child: Center(
           child: Column(
-            children: [
-              const TextWidgetPersonal(
+            children: const [
+              TextWidgetPersonal(
                 'Boton TEST para mandar emails',
               ), //calling hotbrewed Text widget
-              if(kIsWeb) const EmailButtonWeb()
-              else if(Platform.isAndroid || Platform.isIOS) const EmailButton(),// im checking if the platform is android, if yes use EmailButton for android and if not for Web
+              if(kIsWeb) EmailButtonWeb()
+              else if(Platform.isAndroid || Platform.isIOS) EmailButton()
+              else EmailButtonWeb(),// im checking if the platform is android, if yes use EmailButton for android and if not for Web
             ],
           ),
           /* child: TextWidgetPersonal(
